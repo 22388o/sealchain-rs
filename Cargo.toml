@@ -1,8 +1,26 @@
 [package]
 name = "sealchain"
 version = "0.1.0"
+license = "Apache-2.0"
+authors = ["Dr. Maxim Orlovsky <orlovsky@pandoracore.com>"]
+description = "Proof-of-publication medium for client-side-validation"
+repository = "https://github.com/pandora-network/sealchain-rs"
+keywords = ["lnp-bp", "cryptocurrency", "smart-contracts", "blockchain"]
+categories = ["cryptography::cryptocurrencies"]
+readme = "README.md"
 edition = "2018"
+exclude = [".github"]
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "sealchain"
+path = "src/lib.rs"
 
 [dependencies]
+amplify = "3.7.1"
+
+[features]
+default = []
+all = ["serde"]
+serde = ["amplify/serde"]
+
+[workspace]
